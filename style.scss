@@ -1,3 +1,6 @@
+$disabled-color: lightgrey;
+$enabled-color: orange;
+
 .custom-checkbox {
   display: inline-block;
   width: 50px;
@@ -11,9 +14,9 @@
   [type="checkbox"] {
     display: none;
 
-    & + svg {
+    & ~ svg {
       & > * {
-        stroke: lightgrey;
+        stroke: $disabled-color;
         transition: stroke 0.2s ease-in-out;
       }
 
@@ -28,9 +31,9 @@
       }
     }
 
-    &:checked + svg {
+    &:checked ~ svg {
       & > * {
-        stroke: orange;
+        stroke: $enabled-color;
       }
 
       & > path.check {
@@ -38,7 +41,7 @@
       }
     }
 
-    &:not(:checked) + svg > path.check {
+    &:not(:checked) ~ svg > path.check {
       stroke-dashoffset: 100%;
     }
   }
@@ -61,11 +64,11 @@
   [type="radio"] {
     display: none;
 
-    & + svg {
+    & ~ svg {
       cursor: pointer;
 
       & > * {
-        stroke: lightgrey;
+        stroke: $disabled-color;
         transition: stroke 0.2s ease-in-out;
       }
 
@@ -79,9 +82,9 @@
       }
     }
 
-    &:checked + svg {
+    &:checked ~ svg {
       & > * {
-        stroke: orange;
+        stroke: $enabled-color;
       }
 
       & > .inner-circle {
@@ -90,7 +93,7 @@
       }
     }
 
-    &:not(:checked) + svg {
+    &:not(:checked) ~ svg {
       & > .inner-circle {
         stroke-width: 0;
         stroke-linecap: round;
