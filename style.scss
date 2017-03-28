@@ -101,3 +101,32 @@ $enabled-color: orange;
     }
   }
 }
+
+.collapsable {
+  & > .head {
+    display: block;
+    padding: 15px;
+    background-color: $disabled-color;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+
+    & ~ .content {
+      display: flex;
+      background-color: $enabled-color;
+      transition: height 0.2s ease-in-out;
+      height: 0;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:checked {
+      & ~ .content {
+        height: 300px;
+      }
+    }
+  }
+}
