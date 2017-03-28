@@ -13,8 +13,17 @@
   display: none;
 }
 
+.custom-checkbox [type="checkbox"] + svg > * {
+  stroke: lightgrey;
+  transition: stroke 0.2s ease-in-out;
+}
+
+.custom-checkbox [type="checkbox"]:checked + svg > * {
+  stroke: orange;
+}
+
 .custom-checkbox [type="checkbox"] + svg > path {
-  stroke-width: 8;
+  stroke-width: 16;
 }
 
 .custom-checkbox [type="checkbox"] + svg > path.check {
@@ -52,6 +61,15 @@
 
 .custom-radio [type="radio"] {
   display: none;
+}
+
+.custom-radio [type="radio"] + svg > * {
+  stroke: lightgrey;
+  transition: stroke 0.2s ease-in-out;
+}
+
+.custom-radio [type="radio"]:checked + svg > * {
+  stroke: orange;
 }
 
 .custom-radio [type="radio"] + svg > .outer-circle {
