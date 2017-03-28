@@ -53,44 +53,48 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
-}
 
-.custom-radio label {
-  cursor: pointer;
-}
+  label {
+    cursor: pointer;
+  }
 
-.custom-radio [type="radio"] svg {
-  cursor: pointer;
-}
+  [type="radio"] {
+    display: none;
 
-.custom-radio [type="radio"] {
-  display: none;
-}
+    & + svg {
+      cursor: pointer;
 
-.custom-radio [type="radio"] + svg > * {
-  stroke: lightgrey;
-  transition: stroke 0.2s ease-in-out;
-}
+      & > * {
+        stroke: lightgrey;
+        transition: stroke 0.2s ease-in-out;
+      }
 
-.custom-radio [type="radio"]:checked + svg > * {
-  stroke: orange;
-}
+      & > .outer-circle {
+        stroke-width: 8;
+      }
 
-.custom-radio [type="radio"] + svg > .outer-circle {
-  stroke-width: 8;
-}
+      & > .inner-circle {
+        transition: stroke-width 0.2s ease-in-out;
+        stroke-width: 8;
+      }
+    }
 
-.custom-radio [type="radio"] + svg > .inner-circle {
-  transition: stroke-width 0.2s ease-in-out;
-  stroke-width: 8;
-}
+    &:checked + svg {
+      & > * {
+        stroke: orange;
+      }
 
-.custom-radio [type="radio"]:not(:checked) + svg > .inner-circle {
-  stroke-width: 0;
-  stroke-linecap: round;
-}
+      & > .inner-circle {
+        stroke-width: 50;
+        stroke-linecap: round;
+      }
+    }
 
-.custom-radio [type="radio"]:checked + svg > .inner-circle {
-  stroke-width: 50;
-  stroke-linecap: round;
+    &:not(:checked) + svg {
+      & > .inner-circle {
+        stroke-width: 0;
+        stroke-linecap: round;
+      }
+    }
+  }
 }
