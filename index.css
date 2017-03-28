@@ -1,0 +1,22 @@
+.custom-checkbox {
+  width: 150px;
+  height: 150px;
+  border: 2px solid orange;
+  cursor: pointer;
+}
+
+.custom-checkbox svg {
+  cursor: pointer;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+[type="checkbox"]:not(:checked) + svg > path {
+  stroke-dashoffset: 100%;
+}
+
+[type="checkbox"]:checked + svg > path {
+  stroke-dashoffset: 0%;
+}
