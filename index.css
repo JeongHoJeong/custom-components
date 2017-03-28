@@ -1,7 +1,6 @@
 .custom-checkbox {
   width: 150px;
   height: 150px;
-  border: 2px solid orange;
   cursor: pointer;
 }
 
@@ -9,14 +8,24 @@
   cursor: pointer;
 }
 
-[type="checkbox"] {
+.custom-checkbox [type="checkbox"] {
   display: none;
 }
 
-[type="checkbox"]:not(:checked) + svg > path {
+.custom-checkbox [type="checkbox"] + svg > path {
+  stroke-width: 4;
+}
+
+.custom-checkbox [type="checkbox"] + svg > path.check {
+  stroke-dashoffset: 100%;
+  stroke-dasharray: 100%, 150%;
+  transition: stroke-dashoffset 0.2s ease-in-out;
+}
+
+.custom-checkbox [type="checkbox"]:not(:checked) + svg > path.check {
   stroke-dashoffset: 100%;
 }
 
-[type="checkbox"]:checked + svg > path {
+.custom-checkbox [type="checkbox"]:checked + svg > path.check {
   stroke-dashoffset: 0%;
 }
