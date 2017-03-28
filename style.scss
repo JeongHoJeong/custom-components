@@ -3,41 +3,45 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
-}
 
-.custom-checkbox svg {
-  cursor: pointer;
-}
+  svg {
+    cursor: pointer;
+  }
 
-.custom-checkbox [type="checkbox"] {
-  display: none;
-}
+  [type="checkbox"] {
+    display: none;
 
-.custom-checkbox [type="checkbox"] + svg > * {
-  stroke: lightgrey;
-  transition: stroke 0.2s ease-in-out;
-}
+    & + svg {
+      & > * {
+        stroke: lightgrey;
+        transition: stroke 0.2s ease-in-out;
+      }
 
-.custom-checkbox [type="checkbox"]:checked + svg > * {
-  stroke: orange;
-}
+      & > path {
+        stroke-width: 16;
 
-.custom-checkbox [type="checkbox"] + svg > path {
-  stroke-width: 16;
-}
+        &.check {
+          stroke-dashoffset: 100%;
+          stroke-dasharray: 100%, 150%;
+          transition: stroke-dashoffset 0.2s ease-in-out;
+        }
+      }
+    }
 
-.custom-checkbox [type="checkbox"] + svg > path.check {
-  stroke-dashoffset: 100%;
-  stroke-dasharray: 100%, 150%;
-  transition: stroke-dashoffset 0.2s ease-in-out;
-}
+    &:checked + svg {
+      & > * {
+        stroke: orange;
+      }
 
-.custom-checkbox [type="checkbox"]:not(:checked) + svg > path.check {
-  stroke-dashoffset: 100%;
-}
+      & > path.check {
+        stroke-dashoffset: 0%;
+      }
+    }
 
-.custom-checkbox [type="checkbox"]:checked + svg > path.check {
-  stroke-dashoffset: 0%;
+    &:not(:checked) + svg > path.check {
+      stroke-dashoffset: 100%;
+    }
+  }
 }
 
 .radio-buttons {
