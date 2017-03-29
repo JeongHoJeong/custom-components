@@ -140,6 +140,10 @@ $active-color: orange;
         width: 100%;
       }
     }
+
+    & ~ .contents > #{"#tab" + $number + "-content"} {
+      display: initial;
+    }
   }
 }
 
@@ -164,8 +168,10 @@ $active-color: orange;
       user-select: none;
       flex-grow: 1;
       cursor: pointer;
-      font-size: 25px;
+      font-size: 15px;
       color: $disabled-color;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &:hover {
         color: darken($disabled-color, 20%);
@@ -195,7 +201,12 @@ $active-color: orange;
     }
   }
 
-  .content {
+  .contents {
     width: 100%;
+    text-align: center;
+
+    & > * {
+      display: none;
+    }
   }
 }
