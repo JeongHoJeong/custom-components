@@ -1,6 +1,12 @@
 $disabled-color: lightgrey;
 $active-color: orange;
 
+$apricot: #ffcdb2;
+$peach: #ffb4a2;
+$parrot-pink: #e5989b;
+$english-lavender: #b5838d;
+$old-lavender: #6d6875;
+
 .custom-checkbox {
   display: inline-block;
   width: 50px;
@@ -102,13 +108,14 @@ $active-color: orange;
   }
 }
 
-.collapsable {
+.collapsible {
   & > .head {
     display: block;
     padding: 15px;
-    background-color: $disabled-color;
+    background-color: $active-color;
     cursor: pointer;
     color: white;
+    font-size: 20px;
   }
 
   input {
@@ -116,18 +123,24 @@ $active-color: orange;
 
     & ~ .content {
       display: flex;
-      transition: height 0.2s ease-in-out;
-      height: 0;
+      transition: all 0.15s ease-in-out;
+      max-height: 0;
       overflow: hidden;
       justify-content: center;
       align-items: center;
-      padding: 0 40px;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 40px;
+      padding-right: 40px;
       box-sizing: border-box;
+      overflow: hidden;
     }
 
     &:checked {
       & ~ .content {
-        height: 300px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        max-height: 700px;
       }
     }
   }
@@ -163,17 +176,17 @@ $active-color: orange;
     height: 45px;
 
     label {
-      display: flex;
+      display: inline-block;
+      width: calc(100% / 3);
       position: relative;
-      align-items: center;
-      justify-content: center;
       user-select: none;
-      flex-grow: 1;
       cursor: pointer;
       font-size: 15px;
       color: $disabled-color;
       text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
 
       &:hover {
         color: darken($disabled-color, 20%);
@@ -217,21 +230,26 @@ $active-color: orange;
 main {
   max-width: 740px;
   margin: auto;
+  padding: 10px 20px 50px;
 }
 
 /* Styling */
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 300;
 }
 
 header {
-  height: 100px;
+  height: 170px;
   text-align: center;
-  line-height: 100px;
-  font-size: 25px;
-  background-color: black;
-  color: white;
+  line-height: 170px;
+  font-size: 50px;
+  margin-bottom: 50px;
 }
 
 section + section {
