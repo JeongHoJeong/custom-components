@@ -6,97 +6,113 @@
 </head>
 
 <body>
-  <h1>Custom Components</h1>
+  <header>
+    Assignment
+  </header>
+  <main>
+    <section>
+      <h1>Custom Components</h1>
+      <div class="custom-checkbox">
+        <label>
+          <input type="checkbox">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path class="check" d="M 25 55 C 25 100, 65 55, 85 10" fill="transparent"></path>
+            <path class="border" d="M 0 0 L 100 0 L 100 100 L 0 100 L 0 0" fill="transparent"></path>
+          </svg>
+        </label>
+      </div>
 
-  <div class="custom-checkbox">
-    <label>
-      <input type="checkbox">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path class="check" d="M 25 55 C 25 100, 65 55, 85 10" fill="transparent"></path>
-        <path class="border" d="M 0 0 L 100 0 L 100 100 L 0 100 L 0 0" fill="transparent"></path>
-      </svg>
-    </label>
-  </div>
+      <div class="radio-buttons">
+        <div class="custom-radio">
+          <label>
+            <input type="radio" name="radio-option">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle class="outer-circle" cx="50" cy="50" r="40" fill="transparent"></circle>
+              <line x1="50" y1="50" x2="50" y2="50" class="inner-circle"></line>
+            </svg>
+          </label>
+        </div>
+        <div class="custom-radio">
+          <label>
+            <input type="radio" name="radio-option">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle class="outer-circle" cx="50" cy="50" r="40" fill="transparent"></circle>
+              <line x1="50" y1="50" x2="50" y2="50" class="inner-circle"></line>
+            </svg>
+          </label>
+        </div>
+      </div>
+    </section>
 
-  <div class="radio-buttons">
-    <div class="custom-radio">
-      <label>
-        <input type="radio" name="radio-option">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle class="outer-circle" cx="50" cy="50" r="40" fill="transparent"></circle>
-          <line x1="50" y1="50" x2="50" y2="50" class="inner-circle"></line>
-        </svg>
-      </label>
-    </div>
-    <div class="custom-radio">
-      <label>
-        <input type="radio" name="radio-option">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle class="outer-circle" cx="50" cy="50" r="40" fill="transparent"></circle>
-          <line x1="50" y1="50" x2="50" y2="50" class="inner-circle"></line>
-        </svg>
-      </label>
-    </div>
-  </div>
+    <section>
+      <h1>Collapsable Box</h1>
+      <div class="collapsable">
+        <input type="checkbox" id="collapsable">
+        <label for="collapsable" class="head">
+          Click me!
+        </label>
+        <article class="content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </article>
+      </div>
+    </section>
 
-  <h1>Collapsable Box</h1>
-  <div class="collapsable">
-    <input type="checkbox" id="collapsable">
-    <label for="collapsable" class="head">
-      Head
-    </label>
-    <div class="content">
-      Content
-    </div>
-  </div>
-
-  <h1>Tab</h1>
-  <div class="tabs-radio">
-    <input type="radio" name="tab" id="tab1">
-    <input type="radio" name="tab" id="tab2">
-    <input type="radio" name="tab" id="tab3">
-    <div class="tabs">
-      <label for="tab1">Manifesto for Agile Software Development</label>
-      <label for="tab2">애자일 소프트웨어 개발 선언</label>
-      <label for="tab3">アジャイルソフトウェア開発宣言</label>
-    </div>
-    <div class="contents">
-      <article id="tab1-content">
-        <p>We are uncovering better ways of developing<br>
-        software by doing it and helping others do it.<br>
-        Through this work we have come to value:<br></p>
-        <p><em>Individuals and interactions</em> over processes and tools<br>
-        <em>Working software</em> over comprehensive documentation<br>
-        <em>Customer collaboration</em> over contract negotiation<br>
-        <em>Responding to change</em> over following a plan</p>
-        <p>That is, while there is value in the items on<br>
-        the right, we value the items on the left more.</p>
-      </article>
-      <article id="tab2-content">
-        <p>우리는 소프트웨어를 개발하고, 또 다른 사람의 개발을<br>
-        도와주면서 소프트웨어 개발의 더 나은 방법들을 찾아가고<br>
-        있다. 이 작업을 통해 우리는 다음을 가치 있게 여기게 되었다:</p>
-        <p>공정과 도구보다 <em>개인과 상호작용</em>을<br>
-        포괄적인 문서보다 <em>작동하는 소프트웨어</em>를<br>
-        계약 협상보다 <em>고객과의 협력</em>을<br>
-        계획을 따르기보다 <em>변화에 대응하기</em>를</p>
-        <p>가치 있게 여긴다. 이 말은, 왼쪽에 있는 것들도 가치가 있지만,<br>
-        우리는 오른쪽에 있는 것들에 더 높은 가치를 둔다는 것이다.</p>
-      </article>
-      <article id="tab3-content">
-        <p>私たちは、ソフトウェア開発の実践<br>
-        あるいは実践を手助けをする活動を通じて、<br>
-        よりよい開発方法を見つけだそうとしている。<br>
-        この活動を通して、私たちは以下の価値に至った。</p>
-        <p>プロセスやツールよりも<em>個人と対話</em>を、<br>
-        包括的なドキュメントよりも<em>動くソフトウェア</em>を、<br>
-        契約交渉よりも<em>顧客との協調</em>を、<br>
-        計画に従うことよりも<em>変化への対応</em>を、</p>
-        <p>価値とする。すなわち、左記のことがらに価値があることを<br>
-        認めながらも、私たちは右記のことがらにより価値をおく。</p>
-      </article>
-    </div>
-  </div>
+    <section>
+      <h1>Tab</h1>
+      <div class="tabs-radio">
+        <input type="radio" name="tab" id="tab1" checked="checked">
+        <input type="radio" name="tab" id="tab2">
+        <input type="radio" name="tab" id="tab3">
+        <div class="tabs">
+          <label for="tab1">Manifesto for Agile Software Development</label>
+          <label for="tab2">애자일 소프트웨어 개발 선언</label>
+          <label for="tab3">アジャイルソフトウェア開発宣言</label>
+        </div>
+        <div class="contents">
+          <article id="tab1-content">
+            <p>We are uncovering better ways of developing<br>
+            software by doing it and helping others do it.<br>
+            Through this work we have come to value:<br></p>
+            <p><em>Individuals and interactions</em> over processes and tools<br>
+            <em>Working software</em> over comprehensive documentation<br>
+            <em>Customer collaboration</em> over contract negotiation<br>
+            <em>Responding to change</em> over following a plan</p>
+            <p>That is, while there is value in the items on<br>
+            the right, we value the items on the left more.</p>
+          </article>
+          <article id="tab2-content">
+            <p>우리는 소프트웨어를 개발하고, 또 다른 사람의 개발을<br>
+            도와주면서 소프트웨어 개발의 더 나은 방법들을 찾아가고<br>
+            있다. 이 작업을 통해 우리는 다음을 가치 있게 여기게 되었다:</p>
+            <p>공정과 도구보다 <em>개인과 상호작용</em>을<br>
+            포괄적인 문서보다 <em>작동하는 소프트웨어</em>를<br>
+            계약 협상보다 <em>고객과의 협력</em>을<br>
+            계획을 따르기보다 <em>변화에 대응하기</em>를</p>
+            <p>가치 있게 여긴다. 이 말은, 왼쪽에 있는 것들도 가치가 있지만,<br>
+            우리는 오른쪽에 있는 것들에 더 높은 가치를 둔다는 것이다.</p>
+          </article>
+          <article id="tab3-content">
+            <p>私たちは、ソフトウェア開発の実践<br>
+            あるいは実践を手助けをする活動を通じて、<br>
+            よりよい開発方法を見つけだそうとしている。<br>
+            この活動を通して、私たちは以下の価値に至った。</p>
+            <p>プロセスやツールよりも<em>個人と対話</em>を、<br>
+            包括的なドキュメントよりも<em>動くソフトウェア</em>を、<br>
+            契約交渉よりも<em>顧客との協調</em>を、<br>
+            計画に従うことよりも<em>変化への対応</em>を、</p>
+            <p>価値とする。すなわち、左記のことがらに価値があることを<br>
+            認めながらも、私たちは右記のことがらにより価値をおく。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

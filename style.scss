@@ -108,6 +108,7 @@ $active-color: orange;
     padding: 15px;
     background-color: $disabled-color;
     cursor: pointer;
+    color: white;
   }
 
   input {
@@ -115,12 +116,13 @@ $active-color: orange;
 
     & ~ .content {
       display: flex;
-      background-color: $active-color;
       transition: height 0.2s ease-in-out;
       height: 0;
       overflow: hidden;
       justify-content: center;
       align-items: center;
+      padding: 0 40px;
+      box-sizing: border-box;
     }
 
     &:checked {
@@ -209,4 +211,29 @@ $active-color: orange;
       display: none;
     }
   }
+}
+
+/* Responsiveness */
+main {
+  max-width: 740px;
+  margin: auto;
+}
+
+/* Styling */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 25px;
+  background-color: black;
+  color: white;
+}
+
+section + section {
+  margin-top: 100px;
 }
