@@ -1,5 +1,5 @@
 $disabled-color: lightgrey;
-$enabled-color: orange;
+$active-color: orange;
 
 .custom-checkbox {
   display: inline-block;
@@ -33,7 +33,7 @@ $enabled-color: orange;
 
     &:checked ~ svg {
       & > * {
-        stroke: $enabled-color;
+        stroke: $active-color;
       }
 
       & > path.check {
@@ -84,7 +84,7 @@ $enabled-color: orange;
 
     &:checked ~ svg {
       & > * {
-        stroke: $enabled-color;
+        stroke: $active-color;
       }
 
       & > .inner-circle {
@@ -115,7 +115,7 @@ $enabled-color: orange;
 
     & ~ .content {
       display: flex;
-      background-color: $enabled-color;
+      background-color: $active-color;
       transition: height 0.2s ease-in-out;
       height: 0;
       overflow: hidden;
@@ -128,5 +128,53 @@ $enabled-color: orange;
         height: 300px;
       }
     }
+  }
+}
+
+@mixin tab($number) {
+  #{"#tab" + $number}:checked {
+    & ~ .tabs > [for=#{"tab" + $number}] {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tabs-radio {
+  input {
+    display: none;
+  }
+
+  @include tab(1);
+  @include tab(2);
+  @include tab(3);
+
+  .tabs {
+    display: flex;
+
+    label {
+      user-select: none;
+      position: relative;
+      flex-grow: 1;
+      text-align: center;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        transition: width 0.2s ease-in-out;
+        background-color: $active-color;
+        bottom: 0;
+        height: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
   }
 }
